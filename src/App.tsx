@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {FC, useEffect} from 'react';
 import './App.css';
 
-function App() {
+export const App:FC =()=> {
+
+  const url='https://reco-public.rec.mp.microsoft.com/channels/Reco/V8.0/Lists/api/list/Deal'
+
+  useEffect(()=>{
+
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
 
-export default App;
