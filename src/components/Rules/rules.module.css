@@ -1,0 +1,13 @@
+.button {
+    background: linear-gradient(101.6deg, #107C10 6.08%, #00A65A 79.98%);
+    border-radius: 5px;
+}
+.rules {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    align-self: center;
+}

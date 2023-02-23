@@ -1,0 +1,12 @@
+.search {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 262px;
+    height: 40px;
+}
+
+.price {
+    width: 114.91px;
+    height: 40px;
+    border-radius: 5px;
+}

@@ -1,0 +1,21 @@
+.image {
+    width: 160px;
+    height: 200px;
+    border-radius: 6px;
+}
+.listItem {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    position: relative
+
+}
+.text {
+    overflow-wrap: break-word;
+}
+.gold {
+    right: 0;
+    position: absolute;
+    width: 74px;
+    height: 30px;
+}
