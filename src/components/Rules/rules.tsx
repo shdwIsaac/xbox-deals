@@ -1,14 +1,16 @@
 import React, { type FC } from 'react'
 import styles from './rules.module.css'
+import Arrow from '../../images/arrow.png'
 
 export const Rules: FC = () => {
   return (
     <div className={styles.rules}>
       <span>Правила оформления заказа:</span>
-      <ul>
+      <ul className={styles.rulesList}>
         <li>
           <span>
             минимальная стоимость заказа 800 руб
+            <img src={Arrow} className={styles.arrow} alt='arrow'/>
           </span>
         </li>
         <li>
