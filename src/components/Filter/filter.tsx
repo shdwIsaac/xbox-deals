@@ -1,21 +1,23 @@
 import React, { type FC } from 'react'
 import styles from './filter.module.css'
+import { Button, Input, InputNumber } from 'antd'
 
 export const Filter: FC = () => {
   return (
-    <div>
-      <h3>Название</h3>
-      <input type="search" className={styles.search} placeholder='Поиск'/>
-      <h3>Стоимость</h3>
-      <div >
-        <input className={styles.price} type="number" id="fromPrice" placeholder='От'/>
-        <span> - </span>
-        <input className={styles.price} type="number" id="toPrice" placeholder='До'/>
+    <div className={styles.filter}>
+      <div className={styles.filterContent}>
+        <span>Название</span>
+        <Input.Search className={styles.search} placeholder='Поиск' size='large'/>
       </div>
-     {/*  <div>
-        <input type="checkbox" id="topGame" name="isTopGame"/>
-        <label htmlFor="topGame">IsTopGame</label>
-      </div> */}
+      <div className={styles.filterContent}>
+        <span>Стоимость</span>
+        <div >
+          <InputNumber className={styles.price} placeholder='От' size='large'/>
+          <span> — </span>
+          <InputNumber className={styles.price} placeholder='До' size='large'/>
+        </div>
+      </div>
+      <Button className={styles.submitFilter}>Применить фильтры</Button>
     </div>
   )
 }

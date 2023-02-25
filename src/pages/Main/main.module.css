@@ -1,7 +1,8 @@
 .main {
     display: flex;
-    gap: 40px;
+    gap: 6px;
     justify-content: center;
+
 }
 .column {
     margin-top: 50px;
@@ -9,3 +10,4 @@
     flex-direction: column;
     gap: 50px;
 }
+

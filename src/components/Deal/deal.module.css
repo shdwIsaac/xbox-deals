@@ -7,15 +7,29 @@
     display: flex;
     flex-direction: column;
     width: 160px;
-    position: relative
+    position: relative;
+}
+
+.listItem:hover  {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
 
 }
 .text {
     overflow-wrap: break-word;
 }
 .gold {
-    right: 0;
+    top: 150px;
+    right: 10px;
     position: absolute;
-    width: 74px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+}
+
+.gold:hover {
+
+}
+
+.shadow {
+
 }
