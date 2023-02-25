@@ -1,16 +1,8 @@
 export interface IDeal {
-  'id': number
+  'gameId': string
   'gameName': string
-  'isTopGame': boolean
   'isNeedGold': boolean
   'logoPicture': string
-  'prices': [
-    {
-      'country': string
-      'discount': number
-      'price': number
-    }
-  ]
 }
 
 const GetDealsUrl = 'http://localhost:5288/api/DealsControllers'
