@@ -1,20 +1,13 @@
-import React, { type FC, useEffect, useState } from 'react'
-import { getDeals, type IDeal } from '../../utils/api'
+import React, { type FC, useContext } from 'react'
+import { type IGame } from '../../utils/api'
 import { Deal } from '../Deal/deal'
 import { Select } from 'antd'
 import styles from './deals.module.css'
+import { DealsContext } from '../../services/dealsContext'
 
 export const Deals: FC = () => {
-  const [state, setState] = useState<IDeal[]>([])
-
-  const count: number = state.length
-
-  useEffect(() => {
-    const get = async (): Promise<void> => {
-      setState(await getDeals())
-    }
-    void get()
-  }, [])
+  const { deals } = useContext(DealsContext)
+  const count: number = deals.length
 
   return (
     <div>
@@ -27,17 +20,14 @@ export const Deals: FC = () => {
             {
               value: 'name',
               label: 'По имени'
-            },
-            {
-              value: 'price',
-              label: 'По цене'
             }
-          ]} defaultValue="name" size='large'/>
+          ]} defaultValue="name" size="large"/>
         </div>
       </div>
       <ul className={styles.list}>
-        {state.map(deal => {
-          return <Deal key={deal.gameId} logo={deal.logoPicture} name={deal.gameName} isGold={deal.isNeedGold}/>
+        {deals.map((deal: IGame) => {
+          return <Deal key={deal.gameId} logo={deal.logoPicture} name={deal.gameName} isGold={deal.isNeedGold}
+                       id={deal.gameId}/>
         })}
       </ul>
     </div>

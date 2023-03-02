@@ -1,6 +1,6 @@
 .image {
     width: 160px;
-    height: 181px;
+    height: 200px;
     border-radius: 6px;
 }
 .listItem {
@@ -19,7 +19,7 @@
     overflow-wrap: break-word;
 }
 .gold {
-    top: 150px;
+    top: 160px;
     right: 10px;
     position: absolute;
     width: 20px;
@@ -32,4 +32,12 @@
 
 .shadow {
 
+}
+
+.selectCountry {
+    width: 285px;
+}
+.choosePrice {
+    display: flex;
+    justify-content: space-between;
 }

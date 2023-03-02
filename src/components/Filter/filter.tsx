@@ -1,23 +1,31 @@
-import React, { type FC } from 'react'
+import React, { type FC, useContext } from 'react'
 import styles from './filter.module.css'
-import { Button, Input, InputNumber } from 'antd'
+import { Input } from 'antd'
+import { FilterContext } from '../../services/filterContext'
 
 export const Filter: FC = () => {
+  const {
+    values,
+    handleChange
+  } = useContext(FilterContext)
+
   return (
     <div className={styles.filter}>
       <div className={styles.filterContent}>
         <span>Название</span>
-        <Input.Search className={styles.search} placeholder='Поиск' size='large'/>
+        <Input value={values.name} onChange={handleChange} name="name" className={styles.search} placeholder="Поиск"
+               size="large"/>
       </div>
       <div className={styles.filterContent}>
         <span>Стоимость</span>
-        <div >
-          <InputNumber className={styles.price} placeholder='От' size='large'/>
+        <div>
+          <Input type='number' value={values.lowPrice} onChange={handleChange} name="lowPrice" className={styles.price}
+                       placeholder="От" size="large"/>
           <span> — </span>
-          <InputNumber className={styles.price} placeholder='До' size='large'/>
+          <Input type='number' value={values.highPrice} onChange={handleChange} name="highPrice" className={styles.price}
+                       placeholder="До" size="large"/>
         </div>
       </div>
-      <Button className={styles.submitFilter}>Применить фильтры</Button>
     </div>
   )
 }

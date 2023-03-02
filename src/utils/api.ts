@@ -1,8 +1,8 @@
-export interface IDeal {
-  'gameId': string
-  'gameName': string
-  'isNeedGold': boolean
-  'logoPicture': string
+export interface IGame {
+  gameId: string
+  gameName: string
+  isNeedGold: boolean
+  logoPicture: string
 }
 
 const GetDealsUrl = 'http://localhost:5288/api/DealsControllers'
@@ -16,8 +16,33 @@ export async function request<T> (url: string, options?: RequestInit): Promise<T
   return await fetch(url, options).then(async res => await checkResponse<T>(res))
 }
 
-export const getDeals = async (): Promise<IDeal[]> => {
-  return await request(GetDealsUrl, {
+export const getDealsDb = async (params: any): Promise<IGame[]> => {
+  return await request(GetDealsUrl + '?' + new URLSearchParams(params).toString(), {
+    method: 'Get',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Request-Method': 'GET'
+    }
+  })
+}
+
+export interface IGameDeals {
+  gameName: string
+  logoPicture: string
+  description: boolean
+  deals: IDeal[]
+}
+
+export interface IDeal {
+  country: string
+  priceRub: string
+  isNeedGold: boolean
+}
+
+export const getDeal = async (id: string): Promise<IGameDeals> => {
+  return await request(GetDealsUrl + `/${id}`, {
     method: 'Get',
     mode: 'cors',
     headers: {

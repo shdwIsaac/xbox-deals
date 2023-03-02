@@ -21,7 +21,17 @@
 }
 
 .list::-webkit-scrollbar {
+    border-radius: 5px;
     width: 12px;
+}
+.list::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: #FFFFFFE5;
+}
+
+.list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #b2ffbc;
 }
 
 .subHeader {
