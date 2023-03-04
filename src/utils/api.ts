@@ -5,7 +5,7 @@ export interface IGame {
   logoPicture: string
 }
 
-const GetDealsUrl = 'http://localhost:5288/api/DealsControllers'
+const GetDealsUrl = 'http://believerville.store:5288/api/DealsControllers'
 
 export const checkResponse = async <T> (res: Response): Promise<T> => {
   return res.ok ? await res.json() : await res.json().then(async (err) => await Promise.reject(err))

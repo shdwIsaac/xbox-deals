@@ -30,18 +30,12 @@ export const Deal: FC<IDeal> = ({
     void processDeal()
     setIsModalOpen(true)
   }
-  const handleOk = (): void => {
-    setIsModalOpen(false)
-  }
   const handleCancel = (): void => {
     setIsModalOpen(false)
   }
-
   const onChangeSelect = (value: number): void => {
     setSelectedCountry(value)
   }
-
-  console.log(logo)
 
   return (
     <>
@@ -50,7 +44,7 @@ export const Deal: FC<IDeal> = ({
         <span className={styles.text}>{name}</span>
         {isGold && <img src={gold} alt="gold" className={styles.gold}/>}
       </li>
-      <Modal centered open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <Modal centered open={isModalOpen} onCancel={handleCancel} footer={[]}>
         <div className={styles.modal}>
           <img src={logo} alt={name} className={styles.image}/>
           <div>

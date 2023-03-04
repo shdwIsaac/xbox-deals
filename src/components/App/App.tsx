@@ -10,8 +10,8 @@ import './../../fonts/Montserrat-VariableFont_wght.ttf'
 export const App: FC = () => {
   return (
     <div className="App">
-      <Header/>
-      <Main/>
+        <Header/>
+        <Main/>
     </div>
   )
 }

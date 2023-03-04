@@ -1,31 +1,28 @@
 .button {
-    background: linear-gradient(101.6deg, #107C10 6.08%, #00A65A 79.98%);
+    background: linear-gradient(109.4deg, #00A65A -13.25%, #00A65A 26.87%, #55CA88 65.61%, #55C987 65.62%, #107C10 152.04%);
     border-radius: 5px;
-    width: 143px;
-    height: 34px;
+    width: 178px;
+    height: 30px;
+    align-self: center;
     border:0;
-    font-family: Bitter, serif;
-    font-size: 18px;
-    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    color: #FFFFFF;
+    font-family: Montserrat;
 }
 .rules {
-    width: 1140px;
-    height: 132px;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    align-self: center;
-    justify-content: center;
+    row-gap: 30px;
+    font-family: Montserrat;
+    text-align: center;
 }
-.arrow {
-    position: absolute;
-    margin-left: 220px;
-    top: 180px;
-    width: 100px;
-    height: 38px;
-}
-.rulesList {
-    line-height: 0;
+.text {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
 }

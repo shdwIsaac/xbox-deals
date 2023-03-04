@@ -2,25 +2,27 @@
     width: 160px;
     height: 200px;
     border-radius: 6px;
+    align-self: center;
+    margin-top: 10px;
 }
 .listItem {
     display: flex;
     flex-direction: column;
-    width: 160px;
+    width: 180px;
+    height: 304px;
     position: relative;
 }
 
 .listItem:hover  {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
-
 }
 .text {
     overflow-wrap: break-word;
 }
 .gold {
-    top: 160px;
-    right: 10px;
+    top: 170px;
+    right: 20px;
     position: absolute;
     width: 20px;
     height: 20px;
