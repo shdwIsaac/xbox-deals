@@ -1,31 +1,36 @@
-.image {
-    width: 160px;
-    height: 200px;
-    border-radius: 6px;
-    align-self: center;
-    margin-top: 10px;
-}
-.listItem {
-    display: flex;
-    flex-direction: column;
-    width: 180px;
-    height: 304px;
-    position: relative;
-}
+@media screen and (min-width : 1200px) {
+    .image {
+        width: 160px;
+        height: 200px;
+        border-radius: 6px;
+        align-self: center;
+        margin-top: 10px;
+    }
 
-.listItem:hover  {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-}
-.text {
-    overflow-wrap: break-word;
-}
-.gold {
-    top: 170px;
-    right: 20px;
-    position: absolute;
-    width: 20px;
-    height: 20px;
+    .listItem {
+        display: flex;
+        flex-direction: column;
+        width: 180px;
+        height: 304px;
+        position: relative;
+    }
+
+    .listItem:hover {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+    }
+
+    .text {
+        overflow-wrap: break-word;
+    }
+
+    .gold {
+        top: 170px;
+        right: 20px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .gold:hover {
@@ -42,4 +47,40 @@
 .choosePrice {
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width : 1200px) {
+    .image {
+        width: 135px;
+        height: 160px;
+        border-radius: 2px;
+        align-self: center;
+        margin-top: 10px;
+    }
+
+    .listItem {
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        width: 155px;
+        height: 290px;
+        position: relative;
+    }
+
+    .listItem:hover {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+    }
+
+    .text {
+        overflow-wrap: break-word;
+    }
+
+    .gold {
+        top: 140px;
+        right: 20px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
 }

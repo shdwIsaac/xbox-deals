@@ -1,49 +1,99 @@
-.header {
-    height: 100px;
-    background: #333333;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 640px;
+@media screen and (min-width : 1200px) {
+    .header {
+        height: 100px;
+        background: #333333;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 640px;
+    }
+
+    .vkLogo {
+        margin-top: 5px;
+        width: 41px;
+        height: 25px;
+    }
+
+    .logo {
+        width:280px;
+        height: 100px;
+    }
+    .howOrder {
+        font-family: 'Montserrat', serif;
+        color: #FFFFFF;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        background: linear-gradient(109.4deg, #00A65A -13.25%, #00A65A 26.87%, #55CA88 65.61%, #55C987 65.62%, #107C10 152.04%);
+        border-radius: 5px;
+        border: 0;
+        width: 188px;
+    }
+    .info {
+        display: flex;
+        gap: 70px;
+        margin-top: 30px;
+    }
+
+    .rules {
+        margin-top: 80px;
+        width: 300px;
+        height: 160px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        background: #F5F5F5;
+        position: absolute;
+    }
 }
 
-.vkLogo {
-    margin-top: 5px;
-    width: 41px;
-    height: 25px;
+@media screen and (max-width : 1200px) {
+    .header {
+        height: 80px;
+        background: #333333;
+        display: flex;
+        flex-direction: column;
+    }
+    .vkLogo {
+        margin-top: 31px;
+        width: 41px;
+        height: 25px;
+    }
+
+    .logo {
+        width: 250px;
+        height: 80px;
+    }
+    .howOrder {
+        font-family: 'Montserrat', serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #00A65A;
+        background: #FFFFFF;
+        box-shadow: 0 4px 10px rgba(0, 166, 90, 0.15);
+        border: 0;
+        width: 100%;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rules {
+        align-self: center;
+        width: 99.5%;
+        height: 80px;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        background: #F5F5F5;
+    }
 }
 
-.logo {
-    width:280px;
-    height: 100px;
-}
-.howOrder {
-    font-family: 'Montserrat', serif;
-    color: #FFFFFF;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    background: linear-gradient(109.4deg, #00A65A -13.25%, #00A65A 26.87%, #55CA88 65.61%, #55C987 65.62%, #107C10 152.04%);
-    border-radius: 5px;
-    border: 0;
-    width: 188px;
-}
-.info {
-    display: flex;
-    gap: 70px;
-    margin-top: 30px;
-}
 
-.rules {
-    margin-top: 80px;
-    width: 300px;
-    height: 160px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    background: #F5F5F5;
-    position: absolute;
-}
+
