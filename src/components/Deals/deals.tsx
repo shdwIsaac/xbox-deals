@@ -27,7 +27,7 @@ export const Deals: FC = () => {
       <ul className={styles.list}>
         {deals.map((deal: IGame) => {
           return <Deal key={deal.gameId} logo={deal.logoPicture} name={deal.gameName} isGold={deal.isNeedGold}
-                       id={deal.gameId}/>
+                       id={deal.gameId} minPrice={deal.minPrice} country={deal.country}/>
         })}
       </ul>
     </div>

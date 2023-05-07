@@ -1,6 +1,8 @@
 import React, { type FC, useState } from 'react'
 import styles from './deal.module.css'
 import gold from '../../images/gold.svg'
+import arFlag from '../../images/arg.png'
+import tryFlag from '../../images/try.png'
 import { Modal, Select } from 'antd'
 import { getDeal, type IGameDeals } from '../../utils/api'
 
@@ -11,13 +13,17 @@ interface IDeal {
   name: string
   isGold: boolean
   id: string
+  minPrice: number
+  country: string
 }
 
 export const Deal: FC<IDeal> = ({
   logo,
   name,
   isGold,
-  id
+  id,
+  minPrice,
+  country
 }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [gameDeals, setGameDeals] = useState<IGameDeals>()
@@ -42,6 +48,10 @@ export const Deal: FC<IDeal> = ({
       <li onClick={showModal} className={styles.listItem}>
         <img src={logo} alt={name} className={styles.image}/>
         <span className={styles.text}>{name}</span>
+        <div className={styles.additionalInfo}>
+          <span>{minPrice} RUB</span>
+          <img src={country === 'AR' ? arFlag : tryFlag} alt={country}/>
+        </div>
         {isGold && <img src={gold} alt="gold" className={styles.gold}/>}
       </li>
       <Modal centered open={isModalOpen} onCancel={handleCancel} footer={[]}>

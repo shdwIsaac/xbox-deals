@@ -1,10 +1,3 @@
-export interface IGame {
-  gameId: string
-  gameName: string
-  isNeedGold: boolean
-  logoPicture: string
-}
-
 const GetDealsUrl = 'http://believerville.store:5288/api/DealsControllers'
 
 export const checkResponse = async <T> (res: Response): Promise<T> => {
@@ -26,6 +19,15 @@ export const getDealsDb = async (params: any): Promise<IGame[]> => {
       'Access-Control-Request-Method': 'GET'
     }
   })
+}
+
+export interface IGame {
+  gameId: string
+  gameName: string
+  isNeedGold: boolean
+  logoPicture: string
+  minPrice: number
+  country: string
 }
 
 export interface IGameDeals {
