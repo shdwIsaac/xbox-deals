@@ -31,6 +31,12 @@
         width: 20px;
         height: 20px;
     }
+
+    .additionalInfo {
+        display: flex;
+        justify-content: space-between;
+        margin: auto 20px 10px;
+    }
 }
 
 .gold:hover {}
@@ -46,12 +52,7 @@
     display: flex;
     justify-content: space-between;
 }
-.additionalInfo {
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: space-between;
-}
+
 .additionalInfo > img {
     width:36px;
     height: 24px;
@@ -59,24 +60,30 @@
 
 @media screen and (max-width : 1200px) {
     .image {
-        width: 135px;
         height: 160px;
         border-radius: 2px;
-        align-self: center;
         margin-top: 10px;
+    }
+
+    .additionalInfo {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        margin-bottom: 10px;
     }
 
     .listItem {
         background: #FFFFFF;
         display: flex;
         flex-direction: column;
-        /* width: 155px; */
         width: calc((100% - 18px * 4) / 5);
         height: 290px;
         position: relative;
+        padding: 0 10px;
+        border-radius: 10px;
     }
 
-    .listItem:not(:nth-child(5n)) {
+    .listItem:not(:nth-child(4n)) {
         margin-right: 18px;
     }
 
@@ -87,6 +94,8 @@
 
     .text {
         overflow-wrap: break-word;
+        text-align: left;
+        margin-top: 10px;
     }
 
     .gold {
@@ -96,12 +105,19 @@
         width: 20px;
         height: 20px;
     }
+
+    .price {
+        line-height: 170%;
+    }
+    .priceInfo {
+        white-space: nowrap;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+
 }
 
 @media (max-width: 900px) {
-    .listItem {
-        width: calc((100% - 18px * 3) / 4);
-    }
 
     .listItem:nth-child(5n) {
         margin-right: 18px;
@@ -112,10 +128,9 @@
     }
 }
 
-
 @media (max-width: 680px) {
     .listItem {
-        width: calc((100% - 18px * 2) / 3);
+        width: calc((100% - 48px * 2) / 3);
     }
     .listItem:nth-child(4n) {
         margin-right: 18px;
@@ -125,14 +140,13 @@
     }
 
     .image {
-        width: 120px;
         object-fit: fill;
     }
 }
 
 @media (max-width: 576px) {
     .listItem {
-        width: calc((100% - 18px * 1) / 2);
+        width: calc((100% - 48px * 2) / 2);
     }
     .listItem:nth-child(3n) {
         margin-right: 18px;

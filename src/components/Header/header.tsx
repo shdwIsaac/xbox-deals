@@ -1,5 +1,5 @@
 import React, { type FC, useEffect, useState } from 'react'
-import Logo from '../../images/logo.svg'
+import Logo from '../../images/logo.png'
 import VKLogo from '../../images/vk_logo.png'
 import styles from './header.module.css'
 import { Button } from 'antd'
@@ -42,7 +42,6 @@ export const Header: FC = () => {
           }
         </div>
       </header>
-
     </>
   )
 }

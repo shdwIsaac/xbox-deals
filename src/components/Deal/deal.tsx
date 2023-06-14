@@ -49,7 +49,7 @@ export const Deal: FC<IDeal> = ({
         <img src={logo} alt={name} className={styles.image}/>
         <span className={styles.text}>{name}</span>
         <div className={styles.additionalInfo}>
-          <span>{minPrice} RUB</span>
+          <span className={styles.price}>{minPrice} RUB</span>
           <img src={country === 'AR' ? arFlag : tryFlag} alt={country}/>
         </div>
         {isGold && <img src={gold} alt="gold" className={styles.gold}/>}
@@ -68,7 +68,7 @@ export const Deal: FC<IDeal> = ({
               return <Option key={index} value={index}>{element.country}</Option>
             })}
           </Select>
-          <span>{gameDeals?.deals[selectedCountry].priceRub} RUB</span>
+          <span className={styles.priceInfo}>{gameDeals?.deals[selectedCountry].priceRub} RUB</span>
         </div>
       </Modal>
     </>

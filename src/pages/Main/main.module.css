@@ -1,13 +1,22 @@
-.main {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
+@media (min-width: 1200px) {
+    .main {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
 
+    }
+    .column {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
 }
-.column {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+@media (max-width: 1200px) {
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
 }
 
