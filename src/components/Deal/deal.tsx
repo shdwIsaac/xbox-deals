@@ -4,7 +4,7 @@ import gold from '../../images/gold.svg'
 import arFlag from '../../images/arg.png'
 import tryFlag from '../../images/try.png'
 import { Modal, Select } from 'antd'
-import { getDeal, type IGameDeals } from '../../utils/api'
+import { getDeal, getComingSoon, type IGameDeals } from '../../utils/api'
 
 const { Option } = Select
 
@@ -30,6 +30,7 @@ export const Deal: FC<IDeal> = ({
   const [selectedCountry, setSelectedCountry] = useState<number>(0)
 
   const processDeal = async (): Promise<void> => {
+    setGameDeals(await getComingSoon(id))
     setGameDeals(await getDeal(id))
   }
   const showModal = (): void => {

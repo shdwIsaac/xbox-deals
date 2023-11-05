@@ -1,4 +1,5 @@
 const GetDealsUrl = 'http://believerville.store:5288/api/DealsControllers'
+const GetComingSoonUrl = 'http://believerville.store:5288/api/ComingSoonControllers'
 
 export const checkResponse = async <T> (res: Response): Promise<T> => {
   return res.ok ? await res.json() : await res.json().then(async (err) => await Promise.reject(err))
@@ -9,8 +10,20 @@ export async function request<T> (url: string, options?: RequestInit): Promise<T
   return await fetch(url, options).then(async res => await checkResponse<T>(res))
 }
 
-export const getDealsDb = async (params: any): Promise<IGame[]> => {
+export const getDeals = async (params: any): Promise<IGame[]> => {
   return await request(GetDealsUrl + '?' + new URLSearchParams(params).toString(), {
+    method: 'Get',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Request-Method': 'GET'
+    }
+  })
+}
+
+export const getComingSoons = async (params: any): Promise<IGame[]> => {
+  return await request(GetComingSoonUrl + '?' + new URLSearchParams(params).toString(), {
     method: 'Get',
     mode: 'cors',
     headers: {
@@ -45,6 +58,18 @@ export interface IDeal {
 
 export const getDeal = async (id: string): Promise<IGameDeals> => {
   return await request(GetDealsUrl + `/${id}`, {
+    method: 'Get',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Request-Method': 'GET'
+    }
+  })
+}
+
+export const getComingSoon = async (id: string): Promise<IGameDeals> => {
+  return await request(GetComingSoonUrl + `/${id}`, {
     method: 'Get',
     mode: 'cors',
     headers: {

@@ -4,10 +4,49 @@ import { Deal } from '../Deal/deal'
 import { Select } from 'antd'
 import styles from './deals.module.css'
 import { DealsContext } from '../../services/dealsContext'
+// import { FilterContext } from '../../services/filterContext'
+import { Tab, Tabs } from '@nextui-org/react'
 
 export const Deals: FC = () => {
-  const { deals } = useContext(DealsContext)
+  const {
+    deals
+    // setDeals
+  } = useContext(DealsContext)
+  // const { values } = useContext(FilterContext)
   const count: number = deals.length
+  const items = [
+    {
+      key: 'deals',
+      label: 'Предложения'
+    },
+    {
+      key: 'soon',
+      label: 'Скоро выходят'
+    }
+  ]
+
+  /* let currentKey: string = 'deals'
+
+  const onChange = (key: string): void => {
+    currentKey = key
+    void getGames(key)
+  } */
+  /* const getGames = async (key: string): Promise<void> => {
+    switch (key) {
+      case 'deals': {
+        setDeals(await getDeals(values))
+        break
+      }
+      case 'soon': {
+        setDeals(await getComingSoons(values))
+        break
+      }
+    }
+  } */
+
+  /* useEffect(() => {
+    void getGames(currentKey)
+  }, [values]) */
 
   return (
     <div>
@@ -23,6 +62,16 @@ export const Deals: FC = () => {
             }
           ]} defaultValue="name" size="large"/>
         </div>
+      </div>
+      <div className="flex w-full flex-col">
+        <Tabs size="lg" variant="bordered">
+          {items.map((item) => {
+            return <Tab key={item.key} title={<div className="flex items-center space-x-2">
+              <span>{item.label}</span>
+            </div>}>
+          </Tab>
+          })}
+        </Tabs>
       </div>
       <ul className={styles.list}>
         {deals.map((deal: IGame) => {
