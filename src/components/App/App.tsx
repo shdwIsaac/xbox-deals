@@ -1,6 +1,6 @@
 import React, { type FC } from 'react'
 import './App.css'
-import { Header } from '../Header_v2/header'
+import { Header } from '../Header/header'
 import { Main } from '../../pages/Main/main'
 
 // fonts

@@ -1,5 +1,5 @@
 import React, { type FC, useState } from 'react'
-import styles from './deal.module.css'
+import styles from './product.module.css'
 import gold from '../../images/gold.svg'
 import arFlag from '../../images/arg.png'
 import tryFlag from '../../images/try.png'

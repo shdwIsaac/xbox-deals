@@ -1,32 +1,7 @@
-@media screen and (min-width : 1200px) {
-    .filter {
-        display: flex;
-        flex-direction: column;
-        margin-top: 75px;
-        gap: 15px;
-        width: 288px;
-    }
-
-    .filterContent {
-        text-align: left;
-        gap: 15px;
-        display: flex;
-        flex-direction: column;
-
-        height: 128px;
-        background: rgba(255, 255, 255, 0.75);
-        border-radius: 10px;
-        font-family: 'Montserrat', serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        justify-content: center;
-        padding-inline-start: 13px;
-    }
-
-    .submitFilter {
-        border-color: #00A65A;
-        color: #00A65A;
-    }
+.filter {
+    display: flex;
+    flex-direction: column;
+    margin-top: 57px;
+    gap: 15px;
+    width: 288px;
 }

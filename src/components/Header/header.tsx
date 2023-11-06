@@ -1,41 +1,50 @@
-import React, { type FC, useEffect, useState } from 'react'
-import Logo from '../../images/logo.png'
-import VKLogo from '../../images/vk_logo.png'
-import styles from '../Header_v2/header.module.css'
-import { Button } from 'antd'
+import React, { type FC } from 'react'
+import Logo from '../../images/new_logo.jpeg'
+
+import {
+  Button,
+  Modal,
+  ModalContent,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  useDisclosure
+} from '@nextui-org/react'
+import { Rules } from '../Rules/rules'
+import styles from './header.module.css'
 
 export const Header: FC = () => {
-  const [isShown, setIsShown] = useState<boolean>(false)
-  const [width, setWidth] = useState<number>(window.innerWidth)
-
-  function handleWindowSizeChange (): void {
-    setWidth(window.innerWidth)
-  }
-
-  useEffect(() => {
-    window.addEventListener('resize', handleWindowSizeChange)
-    return () => {
-      window.removeEventListener('resize', handleWindowSizeChange)
-    }
-  }, [])
-
-  const isMobile: boolean = width <= 1200
+  const {
+    isOpen,
+    onOpen,
+    onClose,
+    onOpenChange
+  } = useDisclosure()
 
   return (
-    <>
-      <header className={styles.header}>
-        <nav>
-          <img src={Logo} alt="believerville" className={styles.logo}/>
-        </nav>
-        <div className={styles.info}>
-          {!isMobile && <Button size="large" className={styles.howOrder} onClick={(): void => {
-            setIsShown(!isShown)
-          }}>Как заказать</Button>}
-          <nav>
-            {!isMobile && <a href="https://vk.com/believerville"><img src={VKLogo} alt="vk" className={styles.vkLogo}/></a>}
-          </nav>
-        </div>
-      </header>
-    </>
+    <div>
+      <Navbar shouldHideOnScroll>
+        <NavbarContent justify="start">
+          <NavbarBrand>
+            <img src={Logo} alt="believerville" className={styles.logo}/>
+            <p className="font-bold text-inherit">BELIEVERVILLE</p>
+          </NavbarBrand>
+        </NavbarContent>
+
+        <NavbarContent justify="end">
+          <NavbarItem>
+            <Button onPress={onOpen} color="success" variant="flat">Как заказать</Button>
+          </NavbarItem>
+        </NavbarContent>
+      </Navbar>
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}>
+        <ModalContent>
+          <Rules onClose={onClose}/>
+        </ModalContent>
+      </Modal>
+    </div>
   )
 }

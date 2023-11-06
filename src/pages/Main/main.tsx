@@ -9,7 +9,14 @@ import { type IGame } from '../../utils/api'
 
 export const Main: FC = () => {
   const [products, setProducts] = useState<IGame[]>([])
-  const { values, handleChange } = useForm({ name: '', lowPrice: '', highPrice: '' })
+  const {
+    values,
+    handleChange
+  } = useForm({
+    name: '',
+    lowPrice: '',
+    highPrice: ''
+  })
   const count: number = products.length
 
   return (
@@ -23,12 +30,10 @@ export const Main: FC = () => {
           handleChange
         }}>
           <h2 className={styles.headerText}>Каталог игр</h2>
-          <div className={styles.subHeader}>
-            <span>Найдено {count} товаров</span>
-            <div className={styles.main}>
-              <Catalog/>
-              <Filter/>
-            </div>
+          <h4 className={styles.subText}>Найдено {count} товаров</h4>
+          <div className={styles.main}>
+            <Catalog/>
+            <Filter/>
           </div>
         </FilterContext.Provider>
       </DealsContext.Provider>

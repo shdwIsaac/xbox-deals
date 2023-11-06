@@ -1,31 +1,22 @@
-@media (min-width: 1200px) {
-    .main {
-        display: flex;
-        gap: 6px;
-        justify-content: center;
-
-    }
-    .column {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    .subHeader {
-        justify-content: space-between;
-        font-family: 'Montserrat', serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        align-items: center;
-    }
-
-    .headerText {
-        font-size: 30px;
-        font-family: 'Dela Gothic One', serif;
-        line-height: 44px;
-    }
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
+
+.headerText {
+    font-size: 30px;
+    display: flex;
+    font-family: 'Dela Gothic One', serif;
+    line-height: 44px;
+    margin-left: 38vh;
+}
+
+.subText {
+    margin-left: 38vh;
+    font-size: 20px;
+    display: flex;
+    line-height: 44px;
+}
+
 

@@ -16,9 +16,7 @@ export const Filter: FC = () => {
       <Input label="Стоимость от" type="number" value={values.lowPrice} onChange={handleChange} name="lowPrice"/>
       <Input label="Стоимость до" type="number" value={values.highPrice} onChange={handleChange} name="highPrice"/>
 
-      <Select
-        label="Сортировка"
-        defaultSelectedKeys={['name']}>
+      <Select label="Сортировка" defaultSelectedKeys={['name']}>
         <SelectItem key="name">По имени</SelectItem>
       </Select>
     </div>

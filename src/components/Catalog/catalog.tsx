@@ -1,12 +1,12 @@
 import React, { type FC, useContext, useEffect } from 'react'
 import { getComingSoons, getDeals, type IGame } from '../../utils/api'
 // import { Product } from '../Product/product'
-import styles from './deals.module.css'
+import styles from './catalog.module.css'
 import { DealsContext } from '../../services/dealsContext'
 // import { FilterContext } from '../../services/filterContext'
 import { FilterContext } from '../../services/filterContext'
 import { CatalogTab } from '../CatalogTab/catalog-tab'
-import { GameCard } from '../Card_v2/card'
+import { GameCard } from '../Card/card'
 
 export const Catalog: FC = () => {
   const {
@@ -43,7 +43,7 @@ export const Catalog: FC = () => {
   }, [values])
 
   return (
-    <div>
+    <div className={styles.catalog}>
       <CatalogTab tabs={tabItems}></CatalogTab>
       <ul className={styles.list}>
         {products.map((deal: IGame) => {
