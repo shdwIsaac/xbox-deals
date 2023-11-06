@@ -17,7 +17,7 @@ interface IDeal {
   country: string
 }
 
-export const Deal: FC<IDeal> = ({
+export const Product: FC<IDeal> = ({
   logo,
   name,
   isGold,

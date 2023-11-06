@@ -1,7 +1,7 @@
 import React, { type FC, useContext } from 'react'
-import styles from './filter.module.css'
-import { Input } from 'antd'
 import { FilterContext } from '../../services/filterContext'
+import { Input, Select, SelectItem } from '@nextui-org/react'
+import styles from './filter.module.css'
 
 export const Filter: FC = () => {
   const {
@@ -11,21 +11,16 @@ export const Filter: FC = () => {
 
   return (
     <div className={styles.filter}>
-      <div className={styles.filterContent}>
-        <span>Название</span>
-        <Input value={values.name} onChange={handleChange} name="name" className={styles.search} placeholder="Поиск"
-               size="large"/>
-      </div>
-      <div className={styles.filterContent}>
-        <span>Стоимость</span>
-        <div>
-          <Input type='number' value={values.lowPrice} onChange={handleChange} name="lowPrice" className={styles.price}
-                       placeholder="От" size="large"/>
-          <span> — </span>
-          <Input type='number' value={values.highPrice} onChange={handleChange} name="highPrice" className={styles.price}
-                       placeholder="До" size="large"/>
-        </div>
-      </div>
+      <Input label="Название" value={values.name} onChange={handleChange} name="name" placeholder="Поиск"/>
+
+      <Input label="Стоимость от" type="number" value={values.lowPrice} onChange={handleChange} name="lowPrice"/>
+      <Input label="Стоимость до" type="number" value={values.highPrice} onChange={handleChange} name="highPrice"/>
+
+      <Select
+        label="Сортировка"
+        defaultSelectedKeys={['name']}>
+        <SelectItem key="name">По имени</SelectItem>
+      </Select>
     </div>
   )
 }

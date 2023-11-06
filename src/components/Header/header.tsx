@@ -1,9 +1,8 @@
 import React, { type FC, useEffect, useState } from 'react'
 import Logo from '../../images/logo.png'
 import VKLogo from '../../images/vk_logo.png'
-import styles from './header.module.css'
+import styles from '../Header_v2/header.module.css'
 import { Button } from 'antd'
-import { Rules } from '../Rules/rules'
 
 export const Header: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(false)
@@ -35,11 +34,6 @@ export const Header: FC = () => {
           <nav>
             {!isMobile && <a href="https://vk.com/believerville"><img src={VKLogo} alt="vk" className={styles.vkLogo}/></a>}
           </nav>
-          {isShown &&
-            <div className={styles.rules}>
-              <Rules/>
-            </div>
-          }
         </div>
       </header>
     </>

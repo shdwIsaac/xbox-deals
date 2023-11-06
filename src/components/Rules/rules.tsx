@@ -1,13 +1,25 @@
 import React, { type FC } from 'react'
-import styles from './rules.module.css'
+import { Button, ModalBody, ModalFooter } from '@nextui-org/react'
 
-export const Rules: FC = () => {
+interface RulesProps {
+  onClose: () => void
+}
+
+export const Rules: FC<RulesProps> = ({ onClose }) => {
   return (
-    <div className={styles.rules}>
-      <span className={styles.text}>  Оформить заказ вы можете, написав в личные сообщения </span>
-      <a href='https://vk.com/DOG1R'>
-        <button className={styles.button}>ОФОРМИТЬ ЗАКАЗ</button>
-      </a>
-    </div>
+    <>
+      <ModalBody>
+        <p>
+          Оформить заказ вы можете, написав в личные сообщения
+        </p>
+      </ModalBody>
+      <ModalFooter>
+        <a href='https://vk.com/DOG1R'>
+          <Button color="success" onPress={onClose} variant="flat">
+              ОФОРМИТЬ ЗАКАЗ
+          </Button>
+        </a>
+      </ModalFooter>
+      </>
   )
 }
