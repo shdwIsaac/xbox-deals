@@ -17,9 +17,6 @@ export const Catalog: FC = () => {
   const tabItems: ITabItems[] = [{
     key: 'deals',
     label: 'Предложения'
-  }, {
-    key: 'soon',
-    label: 'Скоро выходят'
   }
   ]
 

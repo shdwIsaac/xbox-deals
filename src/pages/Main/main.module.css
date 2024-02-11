@@ -7,11 +7,13 @@
 .headerText {
     font-size: 30px;
     display: flex;
+    margin-left: 360px;
     font-family: 'Dela Gothic One', serif;
     line-height: 44px;
 }
 
 .subText {
+    margin-left: 360px;
     font-size: 20px;
     display: flex;
     line-height: 44px;
