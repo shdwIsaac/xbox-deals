@@ -1,5 +1,5 @@
 import React, { type FC } from 'react'
-import { Button, ModalBody, ModalFooter } from '@nextui-org/react'
+// import { Button, ModalBody, ModalFooter } from '@nextui-org/react'
 
 interface RulesProps {
   onClose: () => void
@@ -8,7 +8,7 @@ interface RulesProps {
 export const Rules: FC<RulesProps> = ({ onClose }) => {
   return (
     <>
-      <ModalBody>
+      {/* <ModalBody>
         <p>
           Оформить заказ вы можете, написав в личные сообщения
         </p>
@@ -19,7 +19,7 @@ export const Rules: FC<RulesProps> = ({ onClose }) => {
               ОФОРМИТЬ ЗАКАЗ
           </Button>
         </a>
-      </ModalFooter>
+      </ModalFooter> */}
       </>
   )
 }

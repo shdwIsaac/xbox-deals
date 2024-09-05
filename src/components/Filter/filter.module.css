@@ -4,4 +4,8 @@
     margin-top: 57px;
     gap: 15px;
     width: 288px;
+    @media (max-width: 772px) {
+        margin-top: 8px;
+        width: 100%;
+      }
 }

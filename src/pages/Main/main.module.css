@@ -1,22 +1,33 @@
 .main {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr min-content;
+
+  @media (max-width: 772px) {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    flex-direction: column-reverse;
+  }
 }
 
 .headerText {
-    font-size: 30px;
-    display: flex;
-    margin-left: 360px;
-    font-family: 'Dela Gothic One', serif;
-    line-height: 44px;
+  font-size: 30px;
+  display: flex;
+  font-family: "Dela Gothic One", serif;
+  line-height: 44px;
 }
 
 .subText {
-    margin-left: 360px;
-    font-size: 20px;
-    display: flex;
-    line-height: 44px;
+  font-size: 20px;
+  display: flex;
+  line-height: 44px;
 }
 
-
+.center {
+  display: flex;
+  justify-content: center;
+}
+.contentApp {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 12px;
+}

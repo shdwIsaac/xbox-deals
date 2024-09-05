@@ -4,14 +4,17 @@ import Logo from '../../images/new_logo.jpeg'
 import {
   Button,
   Modal,
+  ModalBody,
   ModalContent,
+  ModalHeader,
+  ModalFooter,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
   useDisclosure
 } from '@nextui-org/react'
-import { Rules } from '../Rules/rules'
+// import { Rules } from '../Rules/rules'
 import styles from './header.module.css'
 
 export const Header: FC = () => {
@@ -23,11 +26,11 @@ export const Header: FC = () => {
   } = useDisclosure()
 
   return (
-    <div>
+    <div className={styles.wrappHeader}>
       <Navbar shouldHideOnScroll>
         <NavbarContent justify="start">
           <NavbarBrand>
-            <img src={Logo} alt="believerville" className={styles.logo}/>
+            <img src={Logo} alt="believerville" className={styles.logo} />
             <p className="font-bold text-inherit">BELIEVERVILLE</p>
           </NavbarBrand>
         </NavbarContent>
@@ -42,7 +45,21 @@ export const Header: FC = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}>
         <ModalContent>
-          <Rules onClose={onClose}/>
+          <ModalHeader>
+            Как сделать заказ
+          </ModalHeader>
+          <ModalBody>
+            <p>
+              Оформить заказ вы можете, написав в личные сообщения
+            </p>
+          </ModalBody>
+          <ModalFooter>
+            <a href='https://vk.com/DOG1R'>
+              <Button color="success" onPress={onClose} variant="flat">
+                ОФОРМИТЬ ЗАКАЗ
+              </Button>
+            </a>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </div>

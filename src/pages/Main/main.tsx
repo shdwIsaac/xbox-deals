@@ -29,12 +29,19 @@ export const Main: FC = () => {
           values,
           handleChange
         }}>
+
+        <div className={styles.center}>
+        <div className={styles.contentApp}>
+
           <h2 className={styles.headerText}>Каталог игр</h2>
           <h4 className={styles.subText}>Найдено {count} товаров</h4>
           <div className={styles.main}>
             <Catalog/>
             <Filter/>
           </div>
+          </div>
+          </div>
+
         </FilterContext.Provider>
       </DealsContext.Provider>
     </>

@@ -1,8 +1,20 @@
 .logo {
-    width: 48px;
-    height: 48px;
-    border-radius: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
 }
 
+.wrappHeader {
+  max-width: 1202px;
+  width: 100%;
+  margin: auto;
+  & :global(header) {
+    max-width: 1202px;
+    padding: 0 !important;
+  }
 
+  @media (max-width: 1220px) { 
+    padding-inline: 12px;
 
+   }
+}

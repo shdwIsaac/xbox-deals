@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import React, { type FC, useContext, useEffect } from 'react'
 import { getComingSoons, getDeals, type IGame } from '../../utils/api'
 // import { Product } from '../Product/product'
@@ -43,10 +44,16 @@ export const Catalog: FC = () => {
     <div className={styles.catalog}>
       <CatalogTab tabs={tabItems}></CatalogTab>
       <ul className={styles.list}>
-        {products.map((deal: IGame) => {
-          return <GameCard key={deal.gameId} logo={deal.logoPicture} name={deal.gameName} isGold={deal.isNeedGold}
-                          id={deal.gameId} minPrice={deal.minPrice} country={deal.country}/>
-        })}
+        {(products?.length === 0 ? Array(20).fill({}) : products).map((deal: IGame) => (
+          <GameCard
+            key={deal?.gameId}
+            logo={deal?.logoPicture}
+            name={deal?.gameName}
+            isGold={deal?.isNeedGold}
+            id={deal?.gameId}
+            minPrice={deal?.minPrice}
+            country={deal?.country} />
+        ))}
       </ul>
     </div>
   )
