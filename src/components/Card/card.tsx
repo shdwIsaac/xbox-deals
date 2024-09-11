@@ -9,8 +9,10 @@ import {
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  Select,
+  SelectItem
 } from '@nextui-org/react'
+import styles from './card.module.css'
 
 interface IProduct {
   logo: string
@@ -28,7 +30,8 @@ export const GameCard: FC<IProduct> = (product) => {
       <Card isFooterBlurred radius="lg" className="border-none">
         <Image
           alt={product.name}
-          className="object-cover"
+          className={`object-cover ${styles.my_card}`}
+          // className="object-cover"
           height={248}
           src={product.logo}
           width={180}
@@ -47,20 +50,21 @@ export const GameCard: FC<IProduct> = (product) => {
           </Button>
         </CardFooter>
       </Card>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} onClose={onClose}>
         <ModalContent>
-          <ModalHeader className="flex flex-col gap-1">
-            {product.name}
-          </ModalHeader>
+        <ModalHeader />
           <ModalBody>
-            <img src={product.logo} alt={product.name} />
-            <span>{product.minPrice} RUB</span>
+            <img src={product.logo} alt={product.name} className={styles.img_modal} />
+            <b>{product.name}</b>
+            <div className='flex items-center'>
+            <Select defaultSelectedKeys={[product.country]}>
+              <SelectItem key={product.country} value={product.country}>
+                {product.country}
+              </SelectItem>
+            </Select>
+            <span className={styles.price} >{product.minPrice} RUB</span>
+            </div>
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onPress={onClose} variant="flat">
-              ЗАКРЫТЬ
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </div>

@@ -1,0 +1,12 @@
+.my_card {
+    min-height: 248px;
+}
+
+.img_modal{
+    height: 248px;
+    width: fit-content;
+}
+.price{
+    padding-left: 12px;
+    white-space: nowrap;
+}

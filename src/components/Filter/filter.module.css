@@ -1,11 +1,27 @@
 .filter {
-    display: flex;
-    flex-direction: column;
-    margin-top: 57px;
-    gap: 15px;
-    width: 288px;
-    @media (max-width: 772px) {
-        margin-top: 8px;
-        width: 100%;
-      }
+  display: flex;
+  flex-direction: column;
+  margin-top: 57px;
+  gap: 15px;
+  width: 288px;
+  @media (max-width: 772px) {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+.toogle{
+  @media (min-width: 772px) {
+    display: none;
+  }
+}
+.hide_filter{
+  @media (max-width: 772px) {
+    display: none !important;
+  }
+}
+.filter_content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
 }

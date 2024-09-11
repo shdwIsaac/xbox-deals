@@ -15,6 +15,9 @@
     padding-inline-end: 25px;
     row-gap: 20px;
     font-family: 'Montserrat', serif;
+
+    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .list::-webkit-scrollbar {
