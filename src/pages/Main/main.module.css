@@ -23,8 +23,9 @@
 }
 
 .center {
-  display: flex;
-  justify-content: center;
+  margin:  0 auto;
+  max-width: 1200px;
+  width: 100%;
 }
 .contentApp {
   display: flex;
