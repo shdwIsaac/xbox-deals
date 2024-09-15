@@ -56,7 +56,7 @@ export const GameCard: FC<IProduct> = (product) => {
           <ModalBody>
             <img src={product.logo} alt={product.name} className={styles.img_modal} />
             <b>{product.name}</b>
-            <div className='flex items-center'>
+            <div className='flex items-center pb-4'>
             <Select defaultSelectedKeys={[product.country]}>
               <SelectItem key={product.country} value={product.country}>
                 {product.country}
