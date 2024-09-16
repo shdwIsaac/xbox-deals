@@ -14,7 +14,7 @@
   font-family: "Montserrat", serif;
 
   padding-bottom: 16px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 
   display: grid;
   grid-gap: 8px;

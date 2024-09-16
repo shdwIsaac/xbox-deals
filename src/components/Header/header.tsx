@@ -26,6 +26,7 @@ export const Header: FC = () => {
   } = useDisclosure()
 
   return (
+    <div className={styles.wwrappHeader}>
     <div className={styles.wrappHeader}>
       <Navbar shouldHideOnScroll>
         <NavbarContent justify="start">
@@ -62,6 +63,7 @@ export const Header: FC = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+    </div>
     </div>
   )
 }

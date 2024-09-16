@@ -6,8 +6,37 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#BEF264',
+          foreground: '#000000'
+        },
+        focus: '#BEF264'
+      }
+    }
   },
   darkMode: 'class',
-  plugins: [nextui()]
+  plugins: [nextui({
+    themes: {
+      dark: {
+        colors: {
+          primary: {
+            DEFAULT: '#BEF264',
+            foreground: '#000000'
+          },
+          focus: '#BEF264'
+        }
+      },
+      light: {
+        colors: {
+          primary: {
+            DEFAULT: '#BEF264',
+            foreground: '#000000'
+          },
+          focus: '#BEF264'
+        }
+      }
+    }
+  })]
 }

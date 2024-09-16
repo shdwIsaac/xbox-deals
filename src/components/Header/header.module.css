@@ -4,6 +4,11 @@
   border-radius: 30px;
 }
 
+.wwrappHeader{
+  width: 100%;
+  background-color: #000401;
+}  
+
 .wrappHeader {
   max-width: 1202px;
   width: 100%;
