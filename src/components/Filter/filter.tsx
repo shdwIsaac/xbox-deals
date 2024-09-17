@@ -10,8 +10,8 @@ export const Filter: FC = () => {
     handleChange
   } = useContext(FilterContext)
 
-  const [hide, setHide] = useState(false)
-  console.debug({ hide })
+  const [hide, setHide] = useState(true)
+
   const toogleHide = () => { setHide(prev => !prev) }
   const classNamesForFilter = `${styles.filter_content} ${hide ? styles.hide_filter : ''}`
 

@@ -9,12 +9,13 @@
     width: 100%;
   }
 }
-.toogle{
-  @media (min-width: 772px) {
+
+@media (min-width: 772px) {
+  .toogle {
     display: none;
   }
 }
-.hide_filter{
+.hide_filter {
   @media (max-width: 772px) {
     display: none !important;
   }
