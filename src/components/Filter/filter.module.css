@@ -10,13 +10,13 @@
   }
 }
 
-@media (min-width: 772px) {
+@media (min-width: 767px) {
   .toogle {
     display: none;
   }
 }
 .hide_filter {
-  @media (max-width: 772px) {
+  @media (max-width: 767px) {
     display: none !important;
   }
 }

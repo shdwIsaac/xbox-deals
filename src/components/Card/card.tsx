@@ -13,6 +13,7 @@ import {
   SelectItem
 } from '@nextui-org/react'
 import styles from './card.module.css'
+import { useBreakpoint } from '../../breakpoints'
 
 interface IProduct {
   logo: string
@@ -23,20 +24,21 @@ interface IProduct {
   country: string
 }
 export const GameCard: FC<IProduct> = (product) => {
+  const { isScreenS } = useBreakpoint()
   const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure()
 
   return (
     <div className='ps-1 pe-1'>
-      <Card isFooterBlurred radius="lg" className="border-none">
+      <Card isFooterBlurred radius="lg" className={`border-none ${styles.my_card_wrapp}`}>
         <Image
           alt={product.name}
           className={`object-cover ${styles.my_card}`}
           // className="object-cover"
           height={248}
           src={product.logo}
-          width={180}
+          width={isScreenS ? 166 : 180}
         />
-        <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+        <CardFooter className={`justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 ${styles.card_footer}`}>
           <p className="text-tiny text-white/80">{product.minPrice} Р</p>
           <Button
             onPress={onOpen}

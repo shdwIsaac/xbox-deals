@@ -3,6 +3,7 @@ import React, { type FC, useContext, useState } from 'react'
 import { FilterContext } from '../../services/filterContext'
 import { Input, Select, SelectItem, Button } from '@nextui-org/react'
 import styles from './filter.module.css'
+import { useBreakpoint } from '../../breakpoints'
 
 export const Filter: FC = () => {
   const {
@@ -12,12 +13,13 @@ export const Filter: FC = () => {
 
   const [hide, setHide] = useState(true)
 
+  const { isMobileScreen } = useBreakpoint()
   const toogleHide = () => { setHide(prev => !prev) }
   const classNamesForFilter = `${styles.filter_content} ${hide ? styles.hide_filter : ''}`
 
   return (
     <div className={styles.filter}>
-      <Button onClick={toogleHide} className={styles.toogle}>Фильтры</Button>
+      {isMobileScreen && <Button onClick={toogleHide} className={styles.toogle}>Фильтры</Button>}
       <div className={classNamesForFilter}>
         <Input label="Название" value={values.name} onChange={handleChange} name="name" placeholder="Поиск" />
 

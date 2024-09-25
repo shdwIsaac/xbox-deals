@@ -1,12 +1,27 @@
 .my_card {
-    min-height: 248px;
+  min-height: 248px;
+  @media (max-width: 380px) {
+    height: 352px !important;
+    width: 256px !important;
+
+  }
+}
+.my_card_wrapp :global(.rounded-large) {
+  @media (max-width: 380px) {
+    max-width: 256px !important;
+  }
 }
 
-.img_modal{
-    height: 248px;
-    width: fit-content;
+.img_modal {
+  height: 248px;
+  width: fit-content;
 }
-.price{
-    padding-left: 12px;
-    white-space: nowrap;
+.price {
+  padding-left: 12px;
+  white-space: nowrap;
+}
+.card_footer{
+    @media (max-width: 439px) {
+        padding-inline: 4px !important;
+      }
 }
